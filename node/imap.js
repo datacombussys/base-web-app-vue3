@@ -1,10 +1,11 @@
 var Imap = require('imap'),
     inspect = require('util').inspect;
 var fs = require('fs'), fileStream;
+const os = require('os')
 
 var imap = new Imap({
-  user: 'datacombussys@gmail.com',
-  password: 'datacom123',
+  user: '',
+  password: '',
   host: 'imap.gmail.com',
   port: 993,
   tls: true,

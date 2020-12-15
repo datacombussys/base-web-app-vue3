@@ -9,8 +9,8 @@ let transporter = nodemailer.createTransport({
   },
   port: '465',
   auth: {
-    user: 'support@datacombusinesssystems.com',
-    pass: '0313Maninchrist'
+    user: process.env.SUPPORT_DBS_COM_EMAIL,
+    pass: process.env.SUPPORT_DBS_COM_PW
   },
 
   //Google OAuth
