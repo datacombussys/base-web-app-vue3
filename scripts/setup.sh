@@ -16,47 +16,106 @@ BRed='\e[1;31m'
 On_Red='\e[41m'
 IRed='\e[0;91m'
 
-if [ ! -d ./env ]; then
-	printf "Virtual environment not found, creating it\n"
-	sleep 1
-	virtualenv "./env" -p python3
+echo "You must run the following command: source scripts/setup.sh -dev"
+sudo service postgresql start
+sudo service cron start
+
+## Determine if Staging or Production based on install command
+## source ops/install.sh -staging or source ops/install.sh
+SERVER_TYPE=$1
+echo $SERVER_TYPE
+printf "Server install type is: %s\n" "$SERVER_TYPE"
+
+if [ "$SERVER_TYPE" == '-dev' ]; then
+	echo "setup.sh SERVER_TYPE -dev is executed"
+	export NODE_ENV="development"
+else
+	echo "setup.sh SERVER_TYPE prod is executed"
+	SERVER_TYPE="-prod"
+	export NODE_ENV="production"
 fi
 
+# if [ -d ./env ]; then
+# 	echo "env folder does exist"
+# 	echo | pwd
+# 	sudo rm -r ./env
+# fi
+
+printf "Virtual environment not found, creating it\n"
+sleep 1
+
+echo 'Which Python3.9'
+echo | which python3.9
+
+echo 'Python3.9 version'
+echo | python3.9 --version
+
+echo 'PWD'
+echo | pwd
+
+python3.9 -m venv env
 printf "Activating virtual environment...\n"
 source "./env/bin/activate"
+
+echo 'Which Python3.9'
+echo | which python3.9
+
+echo 'pip version'
+echo | pip --version
+
+echo 'which pip'
+echo | which pip
+
+python3.9 -m pip install --upgrade pip setuptools wheel
+# echo | python3.9 -m pip --version
+# echo | which pip
 
 printf "\nInstalling python packages..\n"
 pip3 install -r "./backend/requirements.txt"
 
+echo 'installed python packages'
+
 if [ -d ./frontend ]; then
 	printf "\nInstalling frontend's node packages...\n"
-	npm --prefix ./frontend/ install ./frontend/
+	if [ ! -d ./frontend/node_modules ]; then
+		printf "node_modules in frontend does not exists"
+		mkdir ./frontend/node_modules
+		chmod -R 777 ./frontend/node_modules		
+	fi
+
+	npm --prefix ./frontend/ install --allow-root ./frontend/
 	
 	printf "Adding nodeJS modules bin to your path\n"
 	export PATH="`pwd`/frontend/node_modules/.bin/:$PATH"
-	export NODE_ENV="development"
+else
+	npm --prefix ./frontend/ install --allow-root ./frontend/
+	
+	printf "Adding nodeJS modules bin to your path\n"
+	export PATH="`pwd`/frontend/node_modules/.bin/:$PATH"
+
 fi
+
+# if [ "$SERVER_TYPE" == '-prod' ]; then
+# 	if [ ! -d ./frontend/dist ]; then
+# 		npm --prefix ./frontend/ run build
+# 	fi
+# fi
+
+echo 'installed frontend modules'
 
 if [ -d ./node ]; then
 	printf "\nInstalling Node's node packages...\n"
-	npm --prefix ./node/ install ./node/
+	npm --prefix ./node/ install --allow-root ./node/
 	
 	printf "Adding nodeJS modules bin to your path\n"
 	export PATH="`pwd`/node/node_modules/.bin/:$PATH"
-	export NODE_ENV="development"
+
 fi
+
+echo 'installed node modules'
 
 printf "Adding scripts folder to your path\n"
 export PATH="`pwd`/scripts/:$PATH"
-
-# if [ -d ./cms ]; then
-# 	printf "\nInstalling CMS node Packages...\n"
-# 	npm --prefix ./cms/ install ./cms/
-	
-# 	printf "Adding nodeJS modules bin to your path\n"
-# 	export PATH="`pwd`/frontend/node_modules/.bin/:$PATH"
-# 	export NODE_ENV="development"
-# fi
 
 if [ ! -f "./backend/project/settings/local_settings.py" ]; then
 	echo -e "$IRed"
