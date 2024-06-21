@@ -41,9 +41,7 @@ INSTALLED_APPS = [
     #3rd Party Modules
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_registration',
     'django_extensions',
-    'storages',
     'django_filters',
 
     #My Modules
@@ -149,12 +147,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-REST_REGISTRATION = {
-    'REGISTER_VERIFICATION_ENABLED': False,
-    'RESET_PASSWORD_VERIFICATION_URL': 'https://frontend-url/reset-password/',
-    'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
-    'VERIFICATION_FROM_EMAIL': 'no-reply@example.com',
-}
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 try:
     from .local_settings import *

@@ -8,19 +8,17 @@ const bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var uploadRouter = require('./routes/filemgt');
-var chatSockets = require('./routes/chat/chat');
 var Emails = require('./routes/emails');
-var FileMaker = require('./routes/file-maker/json-fixture-maker');
 
-const exhbs = require('express-handlebars');
+// const exhbs = require('express-handlebars');
+const { engine } = require('express-handlebars');
 
 
 var app = express();
 
 
 // view engine setup
-app.engine('handlebars', exhbs({defaultLayout: 'main'}));
+app.engine('handlebars', engine({defaultLayout: 'main'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
@@ -34,10 +32,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/node/upload', uploadRouter);
-app.use('/node/chat', chatSockets);
 app.use('/node/email', Emails);
-app.use('/node/file-maker', FileMaker);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

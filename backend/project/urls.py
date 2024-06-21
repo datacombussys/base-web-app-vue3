@@ -36,7 +36,7 @@ urlpatterns = [
     #API Links
     url(r'^api/', include((router.urls, 'app_name'),
                           namespace='instance_name')),
-    url(r'^api/accounts/', include('rest_registration.api.urls')),
+    # url(r'^api/accounts/', include('rest_registration.api.urls')),
     url(r'^api/auth/',
         include('rest_framework.urls', namespace='rest_framework')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

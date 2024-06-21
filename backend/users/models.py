@@ -76,7 +76,6 @@ class User(CommonUserBase):
 								blank=True, validators=[RegexValidator(r'^\d{1,4}$')])
 	fax 				= models.CharField(max_length=10, null=True, 
 								blank=True, validators=[RegexValidator(r'^\d{1,10}$')])
-	profile_img = models.ImageField(max_length=100, upload_to='users/profile/', null=True, blank=True)
 	class Meta:
 		ordering = ['last_name', 'first_name', 'date_added']
 	
