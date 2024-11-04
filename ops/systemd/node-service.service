@@ -1,0 +1,16 @@
+[Unit]
+Description={{ DOMAIN }}
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+EnvironmentFile=/home/ichristensen/secrets.sh
+ExecStart=/usr/bin/env node /var/www/{{ SITE_NAME }}/node/bin/www
+StandardOutput=syslog
+StandardError=syslog
+[Install]
+WantedBy=multi-user.target

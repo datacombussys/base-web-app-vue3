@@ -3,6 +3,7 @@ import Appbar from './Components/AppBarMenu.vue';
 import HomeBanner from './Components/HomeBanner.vue';
 import Features from './Components/FeatureSection.vue';
 import Demos from './Components/DemoSection.vue';
+import Documents from './Components/Documents.vue';
 import CallToAction from './Components/CallToAction.vue';
 import Footer from './Components/FooterSection.vue';
 import 'aos/dist/aos.css';
@@ -24,14 +25,7 @@ onMounted(() => {
     <Appbar />
     <v-main class="ma-0">
       <HomeBanner />
-      <Features />
-      <Demos />
-      <CallToAction />
-      <NumberBlock />
-      <BrowserBlock />
-      <ElementBlock />
-      <Technology />
-      <Testimonial />
+			<Documents />
       <Footer />
     </v-main>
   </v-layout>

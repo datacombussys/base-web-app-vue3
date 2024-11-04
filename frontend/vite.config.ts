@@ -3,8 +3,25 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vuetify from 'vite-plugin-vuetify';
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
+	server: {
+		port: 9000,
+		open: false,
+		proxy: {
+			"^/django/.*": {
+				rewrite: (path) => path.replace ('/django/', ''),
+				"target": "http://localhost:9010/",
+				changeOrigin: false
+			},
+			"^/node/.*": {
+				rewrite: (path) => path.replace ('/node/', ''),
+				"target": "http://localhost:9020",
+				changeOrigin: false
+			}
+		}
+	},
   plugins: [
     vue({
       template: {
@@ -34,5 +51,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['vuetify'],
     entries: ['./src/**/*.vue']
-  }
+  },
+	assetsInclude: [
+		"**/*.odt",
+		"**/*.pdf"
+	],
 });

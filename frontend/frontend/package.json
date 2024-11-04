@@ -1,8 +1,8 @@
 {
-  "name": "mantis-vuetify-vuejs",
+  "name": "saints-rise",
   "version": "1.1.0",
   "private": true,
-  "author": "CodedThemes",
+  "author": "Saints Rise",
   "type": "module",
   "scripts": {
     "serve": "vite",

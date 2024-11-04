@@ -3,6 +3,7 @@
 import dashboard from '@/assets/images/landing/bg-mockup-default.png';
 import technology from '@/assets/images/landing/technology.svg';
 import merchant from '@/assets/images/datacom/merchant1.jpeg';
+import skyVideo from '@/layouts/component/video.vue'
 
 // icons
 import { EyeOutlined } from '@ant-design/icons-vue';
@@ -15,167 +16,125 @@ import { EyeOutlined } from '@ant-design/icons-vue';
 </script>
 
 <template>
-  <div class="home-bg2">
-		<v-img
-      :min-height="minHeight"
-      :src="merchant"
-      class="white--text"
-      gradient="to right, rgba(5, 11, 31, .2), rgba(5, 11, 31, .2)">
+<v-row class="bg-primary justify-end py-5">
+	<v-col cols="8" class="grow">
+		<v-container class="pt-0">
+			<v-row class="pt-0">
+				<v-col class="pt-0">
+					<h2>
+						The Heavens declare the glory of God
+					</h2>
+					<h4>
+						Psalm 19:1
+					</h4>
+					<v-row class="justify-center">
+						<v-col cols="12" md="6">
+							<v-card
+								elevation="8">
+								<v-card-item class="py-3">
+									<v-card-title>Scene 1</v-card-title>
 
-		 <v-row class="fill-height flex justify-center">
-        <v-responsive
-          class="d-flex align-center justify-center"
-          height="100%"
-          max-width="100%"
-          width="100%"
-        >
-				
-					<v-row class="spacer" justify="center">
-						<v-col cols="12" lg="4" md="5" class="px-10">
-							<div class="pr-lg-4 homeContent text-md-left text-center">
-								<h1 class="bannerText mb-5 text-white" data-aos="fade-up" data-aos-duration="500">
-									Carefully Crafted for your <span class="text-primary">Caring Vue</span> Project!
-								</h1>
-								<p class="mb-8 text-h5 font-weight-regular text-white" data-aos="fade-up" data-aos-duration="800">
-									Mantis Vue is a blazing-fast dashboard template built using the Vuetify library.
-								</p>
-								<div data-aos="fade-up" class="d-flex flex-wrap ga-2 justify-md-start justify-center" data-aos-duration="1000">
-									<v-btn color="primary" size="large" variant="outlined" to="/components/buttons">Explore components</v-btn>
-									<v-btn color="primary" size="large" to="/dashboard/default">
-										<template v-slot:prepend>
-											<EyeOutlined />
-										</template>
-										Live Preview
-									</v-btn>
-								</div>
-								<div data-aos="fade-up" data-aos-duration="1400">
-									
-								</div>
-							</div>
+									<v-card-subtitle>War on God's Law</v-card-subtitle>
+								</v-card-item>
+
+								<v-card-text>
+									<h4 class="mb-0">
+										Proverbs 20:22
+									</h4>
+									<h5>
+										Unequal weights are an abomination
+									</h5>
+									In this scene, we have Sagittarius shooting the scorpion who is attacking the scales of justice (Libra). Once past the scales of God's justice,
+									the scorpion can attack the woman (Virgo).
+								</v-card-text>
+							</v-card>
+						</v-col>
+						<v-col cols="12" md="6">
+							<v-card
+								elevation="8">
+								<v-card-item class="py-3">
+									<v-card-title>Scene 2</v-card-title>
+
+									<v-card-subtitle>Lion of Judah Protects His Mother</v-card-subtitle>
+								</v-card-item>
+
+								<v-card-text>
+									<h4 class="mb-0">
+										Revelation 5:5
+
+									</h4>
+									<h5>
+										And one of the elders said to me, “Weep no more; behold, the Lion of the tribe of Judah, the Root of David, has conquered"
+									</h5>
+									In this scene, Leo (the Lion of Judah) is protecting Virgo from an attack by the crab cancer. She is being attacked form both sides as the enemy seeks to destroy her.
+								</v-card-text>
+							</v-card>
 						</v-col>
 					</v-row>
-				</v-responsive>
-				
-      </v-row>
-		</v-img>
+					<v-row>
+						<v-col cols="12" md="6">
+							<v-card
+								elevation="8">
+								<v-card-item class="py-3">
+									<v-card-title>Scene 3</v-card-title>
 
+									<v-card-subtitle>Lion of Judah Protects His Mother</v-card-subtitle>
+								</v-card-item>
 
+								<v-card-text>
+									<h4 class="mb-0">
+										John 10:10
+									</h4>
+									<h5>
+										The thief comes only to steal and kill and destroy. I came that they may have life and have it abundantly.
+									</h5>
+									In this scene, a bull is trying to stampede man and woman with his horns. In order to protect man and woman, we have a warrior (Orion) throwing Jupiter at him in order to protect God's beloved.
+									<br />
+									<small>Notice the ram behind the bull, watching whats happening and getting ready to ram him. Ref Daniel 8</small>
+								</v-card-text>
+							</v-card>
+						</v-col>
+						<v-col cols="12" md="6">
+							<v-card
+								elevation="8">
+								<v-card-item class="py-3">
+									<v-card-title>Scene 4</v-card-title>
 
-    <!-- <v-container class="maxWidth">
-			<img :src="merchant" class="HeaderImage d-none d-md-block" />
-      <v-row class="spacer align-center">
-        <v-col cols="12" lg="4" md="5">
-          <div class="pr-lg-4 homeContent text-md-left text-center">
-            <h1 class="bannerText mb-5 text-white" data-aos="fade-up" data-aos-duration="500">
-              Carefully Crafted for your <span class="text-primary">Caring Vue</span> Project
-            </h1>
-            <p class="mb-8 text-h5 font-weight-regular text-white" data-aos="fade-up" data-aos-duration="800">
-              Mantis Vue is a blazing-fast dashboard template built using the Vuetify library.
-            </p>
-            <div data-aos="fade-up" class="d-flex flex-wrap ga-2 justify-md-start justify-center" data-aos-duration="1000">
-              <v-btn color="primary" size="large" variant="outlined" to="/components/buttons">Explore components</v-btn>
-              <v-btn color="primary" size="large" to="/dashboard/default">
-                <template v-slot:prepend>
-                  <EyeOutlined />
-                </template>
-                Live Preview
-              </v-btn>
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1400">
-							
-            </div>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container> -->
+									<v-card-subtitle>Atone for Sin</v-card-subtitle>
+								</v-card-item>
 
+								<v-card-text>
+									<h4 class="mb-0">
+										1 John 4:10
+									</h4>
+									<h5>
+										In this is love, not that we have loved God but that he loved us and sent his Son to be the propitiation for our sins.
+									</h5>
+									In the old testament, goats were used to sacrifice for sin. Jesus was the ultimate sacrifice for everybody. 
+									If man dies in their sin, the wrath of God will be poured out on Earth as we see Aquarius doing here.
+									The bowl of wrath will be poured onto the sea and kill all the fish (Pisces).
+									<br />
+									<small>Notice Saturn in the midst of the wrath being poured out...like a millstone around its head...</small>
+								</v-card-text>
+							</v-card>
+						</v-col>
+					</v-row>
+				</v-col>
+			</v-row>
+		</v-container>
+	</v-col>
+	<v-col cols="4" class="grow-0" align-self="center">
+		<v-row class="justify-center">
+			<v-cols cols="12" lg="4" md="5" class="px-10">
+				<skyVideo />
+			</v-cols>
+		</v-row>
+	</v-col>
+</v-row>
 
-  </div>
+	
+
 </template>
 <style scoped lang="scss">
-.home-bg2 {
-	position: relative;
-	background: #141414;
-	overflow: hidden;
-  min-height: 100vh;
-  display: block;
-  align-items: top;
-  &::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background: linear-gradient(329.36deg, rgb(0, 0, 0) 14.79%, rgba(67, 67, 67, 0.28) 64.86%);
-  }
-}
-.home-bg {
-  position: relative;
-  background: #141414;
-  overflow: hidden;
-  min-height: 100vh;
-  display: block;
-  align-items: top;
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background: linear-gradient(329.36deg, rgb(0, 0, 0) 14.79%, rgba(67, 67, 67, 0.28) 64.86%);
-  }
-}
-.homeContent {
-  position: relative;
-  z-index: 2;
-}
-.bannerText {
-  font-size: 2.5rem;
-  line-height: 1.3;
-  font-weight: 700;
-  @media (max-width: 1264px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 800px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 768px) {
-    font-size: 1.825rem;
-  }
-}
-.HeaderImage {
-  display: block;
-  object-fit: cover;
-  position: relative;
-  z-index: 1;
-  width: 100%;
 
-}
-.widget1 {
-  position: absolute;
-  top: -40px;
-  right: -170px;
-  width: 290px;
-  animation: 10s slideY linear infinite;
-}
-.widget2 {
-  position: absolute;
-  bottom: -90px;
-  left: 300px;
-  width: 280px;
-  animation: 10s slideY linear infinite;
-  animation-delay: 2s;
-}
-.widgetImages {
-  max-width: 100%;
-  filter: drop-shadow(0px 0px 50px rgb(33 150 243 / 30%));
-}
-
-.v-container {
-	padding: 0px;
-	margin: 0px;
-}
 </style>

@@ -87,7 +87,7 @@ const icons = ref([InstagramOutlined, TwitterOutlined, GooglePlusOutlined]);
               <div class="contactDetails pr-lg-6">
                 <img :src="LogoFooter" alt="logo" />
                 <p class="mt-4 text-h6">
-                  Since 2017, More than 50K+ Developers trust the CodedThemes Digital Product. Mantis Vue is Manage under their Experienced
+                  Since 2017, More than 50K+ Developers trust the Saints Rise Digital Product. Mantis Vue is Manage under their Experienced
                   Team Players.
                 </p>
               </div>
@@ -133,7 +133,7 @@ const icons = ref([InstagramOutlined, TwitterOutlined, GooglePlusOutlined]);
     <v-container class="py-0">
       <v-row class="align-center">
         <v-col sm="6">
-          <h6 class="text-subtitle-2 text-lightText mb-0">© Made with love by Team CodedThemes 123</h6>
+          <h6 class="text-subtitle-2 text-lightText mb-0">© Made with love by Team Saints Rise 123</h6>
         </v-col>
         <v-col sm="6" class="text-right">
           <v-btn v-for="(icon, i) in icons" :key="i" icon variant="plain" size="small">

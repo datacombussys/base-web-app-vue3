@@ -1,0 +1,11 @@
+IP_V4_PROD="206.189.78.42"
+IP_V4_STAGING_PROXY="10.29.241.242"
+IP_V6_STAGING_PROXY="fd42:a55:dd9a:2e98:216:3eff:fe1b:f0fe"
+
+DOMAIN="datacommerchantservices.com"
+STAGING_SERVER_DOMAIN="stage-my-site.com"
+DJANGO_PORT="9010"
+NODE_PORT="9020"
+
+
+WSGI_VERSION="5.0.0"

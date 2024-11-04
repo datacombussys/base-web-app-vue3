@@ -52,6 +52,10 @@ const i18n = createI18n({
   silentFallbackWarn: true
 });
 
+// Video.js
+import VueVideoPlayer from '@videojs-player/vue'
+
+
 const app = createApp(App);
 fakeBackend();
 app.use(router);
@@ -63,6 +67,7 @@ app.use(Antd);
 app.use(print);
 app.use(Vue3Marquee);
 app.use(i18n);
+app.use(VueVideoPlayer);
 app.directive('maska', vMaska);
 app.use(VueApexCharts);
 app.use(vuetify).mount('#app');

@@ -1,0 +1,10 @@
+BRANCH = None
+from .base import *
+
+# This is the wsgi settings file
+# Why is this """DEBUG = True"""
+print("STAGING.PY")
+
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']

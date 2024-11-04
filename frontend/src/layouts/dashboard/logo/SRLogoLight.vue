@@ -7,7 +7,7 @@ const darkprimary = ref('rgb(var(--v-theme-darkprimary))');
 <template>
   <div class="logo">
     <RouterLink to="/" aria-label="logo">
-			<img src="@/assets/logos/datacom/DatacomLogo120x40.png" width="240" height="80" alt="Datacom">
+			<img src="@/assets/logos/Saints Rise (250 x 50 px).png" width="250" height="50" alt="Datacom">
     </RouterLink>
   </div>
 </template>

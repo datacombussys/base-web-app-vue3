@@ -11,7 +11,7 @@ const DefaultTheme: ThemeTypes = {
     'card-shadow': '0px 1px 4px rgba(0, 0, 0, 0.08)'
   },
   colors: {
-    primary: '#1677ff',
+    primary: '#bcbcbc',
     secondary: '#8c8c8c',
     info: '#13c2c2',
     success: '#52c41a',

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     #My Modules
     'blog',
     'users',
+    'counters',
 
 ]
 

@@ -1,5 +1,5 @@
 # DataBoxx with DataPOS
-## by Datacom Business Systems
+## by Saints Rise
 
 ## Getting started
 

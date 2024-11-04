@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 // icons
 import { MenuOutlined, LineOutlined } from '@ant-design/icons-vue';
 
-import Logo from '@/layouts/dashboard/logo/DatacomLogoDark.vue';
+import Logo from '@/layouts/dashboard/logo/SRLogoDark.vue';
 import { useDisplay } from 'vuetify';
 
 const { mdAndUp } = useDisplay();

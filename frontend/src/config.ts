@@ -14,7 +14,7 @@ const config: ConfigProps = {
   Customizer_drawer: false,
   mini_sidebar: false,
   setHorizontalLayout: false, // Horizontal layout
-  actTheme: 'DarkDefaultTheme', // DefaultTheme Or DarkDefaultTheme
+  actTheme: 'LightDefaultTheme', // DefaultTheme Or LightDefaultTheme
   fontTheme: 'Public sans',
   inputBg: false,
   boxed: false
